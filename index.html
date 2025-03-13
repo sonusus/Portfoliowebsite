@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0000ff;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+
+      
+      
+  /* NAVBAR STYLING */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* Desktop Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: cyan;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Hide on desktop */
+    color: white;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 50%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show menu when active */
+    }
+}
+
+
+
+
+        /* Flip Section */
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .flip-box {
+            width: 60%;
+            height: 70%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .flip-box.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-box .side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+
+        .front h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+        }
+
+        .highlight {
+            color: cyan;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: gray;
+        }
+
+        .year {
+            font-size: 14px;
+            color: lightgray;
+        }
+
+        .back {
+            background: black;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: left;
+            padding: 20px;
+            position: relative;
+            top:90px;
+            left:90px
+        }
+
+        .name {
+            color: cyan;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: cyan;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .profile img {
+            width: 250px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.7);
+            filter: drop-shadow(5px 5px 10px  rgba(0, 255, 255, 0.7));
+        }
+
+        .profile {
+            position: relative;
+            left: 420px;
+            bottom: 120px;
+           
+        }
+        @media (max-width: 1024px) {
+            .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .flip-box {
+            width: 100%;
+            height: 70%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .flip-box.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-box .side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+
+        .front h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+        }
+
+        .highlight {
+            color: cyan;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: gray;
+        }
+
+        .year {
+            font-size: 14px;
+            color: lightgray;
+        }
+
+        .back {
+            background: black;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: left;
+            padding: 20px;
+            position: relative;
+            top:90px;
+            left:90px
+        }
+
+        .name {
+            color: cyan;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: cyan;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .profile img {
+            width: 250px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.7);
+            filter: drop-shadow(5px 5px 10px  rgba(0, 255, 255, 0.7));
+        }
+
+        .profile {
+            position: relative;
+            left: 420px;
+            bottom: 120px;
+           
+        } 
+        }
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: cyan;
+            font-size: 18px;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* About Me Section */
+        .about {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            padding: 50px 0;
+        }
+
+        .about-container {
+            display: flex;
+            width: 85%;
+            max-width: 1200px;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid white;
+            padding: 20px;
+            transition: 0.4s;
+          
+        }
+
+        .about-container:hover {
+            border-color: royalblue;
+            box-shadow: 0px 0px 20px royalblue;
+            background-color: #0000ff;
+        }
+
+        .text-section {
+            width: 50%;
+            text-align: left;
+        }
+
+        .text-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .text-section h2 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: cyan;
+        }
+
+        .text-section p {
+            margin-top: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+             /* Image Section */
+             .image-section {
+            width: 45%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        /* Flip Card Effect */
+        .flip-card {
+            width: 250px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid royalblue;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        /* Front Side */
+        .flip-card-front {
+            background: black;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        /* Back Side */
+        .flip-card-back {
+            background: royalblue;
+            color: white;
+            transform: rotateY(180deg);
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Floating Labels */
+        .floating-label {
+            position: absolute;
+            background: royalblue;
+            color: white;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 2;
+            transition: 0.3s;
+        }
+
+        /* Hover Effect on Labels */
+        .floating-label:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 10px royalblue;
+        }
+
+        .logo {
+            bottom: 10px;
+            left: 30px;
+        }
+
+        .brand {
+            top: 20px;
+            right: 30px;
+        }
+
+        .body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f0c29,#0000ff, #24243e);
+            color: white;
+            text-align: center;
+            padding: 70px;
+        }
+
+        .body h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+       .body p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .container1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 120px;
+            height: 120px;
+            background: #000; /* Black background */
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: float 3s ease-in-out infinite alternate;
+        }
+
+        .card img {
+            width: 106px;
+            height: 110px;
+            filter: brightness(0.9);
+            border-radius: 30px;
+        }
+
+        /* Neon Blue Hover Effect */
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #00faff, 0 0 30px #00faff;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        .body2 {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f0c29, #0000ff, #24243e);
+            color: white;
+            text-align: center;
+            padding: 70px;
+            margin: 0;
+        }
+
+        .body2 h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .body2 p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .card1 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1); /* Transparent effect */
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .card1 img {
+            width: 200px;
+            height: 200px;
+            filter: brightness(0.9);
+        }
+
+        /* Magic effect: Hide and show cards */
+        .container2:hover .card1 {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        .card1 a {
+        text-decoration: none; /* Removes underline */
+        color: inherit; /* Inherits text color from parent */
+    }
+        .container2:not(:hover) .card1 {
+            opacity: 1;
+            transform: scale(1);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: cyan;
+            font-size: 16px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-top: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2 class="logo">Portfolio.</h2>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/qualification.html">Qualification</a></li>
+            <li><a href="/skill.html">Skills</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Flip Box Section -->
+    <div class="container" id="home">
+        <div class="flip-box" id="flipBox">
+            <div class="side front">
+                <h1>P<span class="highlight">ortfolio</span></h1>
+                <p class="subtitle">Python & React Developer</p>
+                <p class="year">2025</p>
+                <div class="scroll-down" onclick="scrollToSection('about')">► Download Resume ►</div>
+            </div>
+            <div class="side back">
+                <section class="hero">
+                    <div class="content">
+                        <h1>Hi, <br> I'm <span class="name">Sonu Susan Varughese</span><br> Web Developer</h1>
+                        <a href="assets/Sonu Susan Varughese resume.pdf" download="Sonu_Susan_Varughese_Resume.pdf" class="btn">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                    <div class="profile">
+                        <img src="/assets/IMG-20250311-WA0010.jpg" alt="Profile">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- <div class="scroll-down" onclick="scrollToSection('about')">▼ Scroll Down ▼</div> -->
+    </div>
+
+    <!-- About Me Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="text-section">
+                <h1>ABOUT ME</h1>
+                <h2>Web Developer & Designer</h2>
+                <p>
+                    Passionate about coding, I specialize in Python and React.
+                    I love building interactive, user-friendly applications that create a seamless experience.
+                </p>
+            </div>
+            <div class="image-section">
+                <!-- Flip Card Effect -->
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="/assets/IMG-20250311-WA0011.jpg" alt="Person">
+                    </div>
+                    <div class="flip-card-back">
+                        SOFTWARE DEVELOPER
+                    </div>
+                </div>
+              <a href="/contact.html" > <span class="floating-label logo">CONTACT</span></a>
+              <a href="/about.html">  <span class="floating-label brand">ABOUT ME</span></a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="body">
+        <h1>10 Essential Web Development Tools</h1>
+        <p>Every Developer Should Know</p>
+    
+        <div class="container1">
+            <div class="card"><img src="/assets/3801980_2b83_3.webp" alt="VS Code"></div>
+            <div class="card"><img src="/assets/46ff6ebb59f15066248b2d2c4404ffdc.jpg" alt="Git"></div>
+            <div class="card"><img src="/assets/images (1).jpeg" alt="Chrome DevTools"></div>
+            <div class="card"><img src="/assets/images (1).png" alt="Bootstrap"></div>
+            <div class="card"><img src="/assets/images (2).png" alt="jQuery"></div>
+            <div class="card"><img src="/assets/images (3).png" alt="React"></div>
+            <div class="card"><img src="/assets/images.jpeg" alt="Postman"></div>
+            <div class="card"><img src="/assets/beOFkU.webp" alt="ESLint"></div>
+            <div class="card"><img src="/assets/react-smilegupta-201003085741-thumbnail.webp" alt="Webpack"></div>
+            <div class="card"><img src="/assets/visual.jpg" alt="Selenium"></div>
+        </div>
+    </div>
+    <div class="body2">
+        <h1>My Works</h1>
+        <p>Projects I've Built</p>
+    
+        <div class="container2">
+            <div class="card1">
+                <a href="projects.html">
+                    <img src="https://i.makeagif.com/media/6-19-2015/t4etUe.gif" alt="">
+                </a>
+            </div>
+            <div class="card1">
+                <a href="projects.html">
+                    <img src="https://lh4.googleusercontent.com/proxy/NRPjLQnURub8-Zr0vrkXc7Y3aZoUvcxvKQSRVs_iaonINagVEFMrvllLj8Ec_EbjoonIW79PBcSmBzjNotJbhGc5w3MRAWzr9ZUByaSBk5P9K98" alt="">
+                </a>
+            </div>
+            <div class="card1">
+                <a href="projects.html">
+                    <img src="https://i.makeagif.com/media/6-18-2016/7P6CuH.gif" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setInterval(() => {
+                document.getElementById("flipBox").classList.toggle("flipped");
+            }, 5000);
+        });
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("show");
+    }
+    </script>
+  <footer>
+    <p>&copy; 2025 Sonu Susan Varghese | All Rights Reserved</p>
+</footer>
+</body>
+</html>

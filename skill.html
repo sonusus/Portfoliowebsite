@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" defer></script>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0f0c29, #0000ff, #24243e);
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* Desktop Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: cyan;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Hide on desktop */
+    color: white;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 50%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show menu when active */
+    }
+}
+      
+
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 100px; /* Creates an even gap */
+            padding: 50px;
+            max-width: 90%;
+            margin: auto;
+          
+        }
+
+        /* Technical Skills */
+        .technical-skills {
+            width: 50%;
+          position: relative;
+          top: 70px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #00d4ff;
+           
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            
+        }
+
+        .skill-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            color: #00d4ff;
+        }
+
+        .progress-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .progress-bar {
+            width: 80%;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+        }
+
+        .progress {
+            height: 100%;
+            width: 0;
+            background: #00d4ff;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Professional Skills - Two in a Row */
+        .professional-skills {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            top: 70px;
+        }
+
+        .professional-skills-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .circular-progress-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 45%;
+        }
+
+        .circular-progress {
+            width: 100px;
+            height: 100px;
+            background: conic-gradient(#00d4ff 0deg, #333 0deg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+        }
+
+        .circular-progress-container p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: cyan;
+            font-size: 16px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-top: 40px; /* Adds space between the last section and footer */
+            padding: 20px;
+        }
+        .h{
+            text-align: center;
+            margin-left: 120px;
+            position: relative;  
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h2 class="logo">Portfolio.</h2>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/qualification.html">Qualification</a></li>
+                <li><a href="/skill.html">Skills</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <!-- Technical Skills -->
+        <div class="technical-skills">
+            <h2>Technical Skills</h2>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                    <span class="percentage">90%</span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar"><div class="progress" data-width="60%"></div></div>
+                    <span class="percentage">60%</span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <i class="fab fa-js skill-icon"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                    <span class="percentage">85%</span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <i class="fab fa-python skill-icon"></i>
+                    <p>Python</p>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar"><div class="progress" data-width="50%"></div></div>
+                    <span class="percentage">50%</span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <i class="fab fa-react skill-icon"></i>
+                    <p>React</p>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar"><div class="progress" data-width="76%"></div></div>
+                    <span class="percentage">76%</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Professional Skills (2 per row) -->
+        <div class="professional-skills">
+            <h2 class="h">Professional Skills</h2>
+            <div class="professional-skills-container">
+                <div class="circular-progress-container">
+                    <div class="circular-progress" data-percent="90"></div>
+                    <p>Creativity</p>
+                </div>
+                <div class="circular-progress-container">
+                    <div class="circular-progress" data-percent="75"></div>
+                    <p>Communication</p>
+                </div>
+                <div class="circular-progress-container">
+                    <div class="circular-progress" data-percent="75"></div>
+                    <p>Problem Solving</p>
+                </div>
+                <div class="circular-progress-container">
+                    <div class="circular-progress" data-percent="85"></div>
+                    <p>Teamwork</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // GSAP Animation for Technical Skill Progress Bars
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".progress").forEach((progress) => {
+                gsap.to(progress, {
+                    width: progress.getAttribute("data-width"),
+                    duration: 1.5,
+                    ease: "power2.out",
+                });
+            });
+    
+            // GSAP Animation for Circular Progress Bars
+            document.querySelectorAll(".circular-progress").forEach((circle) => {
+                let percent = circle.getAttribute("data-percent");
+                let angle = (percent / 100) * 360;
+    
+                gsap.to(circle, {
+                    backgroundImage: `conic-gradient(#00d4ff ${angle}deg, #333 ${angle}deg)`,
+                    duration: 2,
+                    ease: "power2.out",
+                });
+    
+                // Add percentage text inside the circle
+                circle.textContent = percent + "%";
+            });
+        });
+       
+       function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("show");
+    }
+
+    </script>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sonu Susan Varghese | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

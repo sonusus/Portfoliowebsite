@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualifications</title>
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0f0c29, #0000ff, #24243e);
+            color: white;
+        }
+
+       /* Navigation */
+ 
+
+/* Ensures the nav list stays inside */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* Desktop Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: cyan;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Hide on desktop */
+    color: white;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 50%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show menu when active */
+    }
+}
+      
+
+        /* Page Title */
+        h1 {
+            text-align: center;
+            margin-top: 150px;
+            font-size: 36px;
+        }
+
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        /* Timeline Vertical Line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: #00d4ff;
+            top: 140px;
+            bottom: 180px;
+            left: 50%;
+            margin-left: -2px;
+            animation: glow 1.5s infinite alternate;
+            z-index: -1;
+        }
+
+        /* Timeline Boxes */
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-container.left {
+            left: 0;
+            text-align: right;
+            padding-right: 60px;
+        }
+
+        .timeline-container.right {
+            left: 50%;
+            text-align: left;
+            padding-left: 60px;
+        }
+
+        /* Connector Dots */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #00d4ff;
+            border: 4px solid white;
+            top: 50%;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            right: -9px;
+        }
+
+        .timeline-container.right::after {
+            left: -9px;
+        }
+
+        /* Content Box */
+        .content {
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            border: 2px solid #00d4ff;
+            position: relative;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+        }
+
+        /* Hover Effect */
+        .timeline-container:hover .content {
+            transform: scale(1.05);
+            border: 2px solid #fff;
+            background: #00d4ff;
+            color: black;
+            box-shadow: 0 0 25px #00d4ff;
+        }
+
+        /* Neon Border Animation */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px #00d4ff;
+            }
+            100% {
+                box-shadow: 0 0 20px #00d4ff;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: cyan;
+            font-size: 16px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-top: 40px; /* Adds space between the last section and footer */
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+       
+        <nav>
+            <h2 class="logo">Portfolio.</h2>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/qualification.html">Qualification</a></li>
+                <li><a href="/skill.html">Skills</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <!-- Qualifications Section -->
+    <section class="qualification">
+        <h1>My Qualifications</h1>
+        <div class="timeline">
+            <div class="timeline-container left">
+                <div class="content">
+                    <h2>2015</h2>
+                    <p><b>10th Grade</b> - Kerala Board (88%)</p>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="content">
+                    <h2>2017</h2>
+                    <p><b>12th Grade</b> - Kerala Board (89%)</p>
+                </div>
+            </div>
+
+            <div class="timeline-container left">
+                <div class="content">
+                    <h2>2020</h2>
+                    <p><b>Bachelor of Science in Mathematics</b> - Kerala University (73%)</p>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="content">
+                    <h2>2023</h2>
+                    <p><b>Master of Computer Applications</b> - MG University (77%)</p>
+                </div>
+            </div>
+
+            <!-- Internships -->
+            <div class="timeline-container left">
+                <div class="content">
+                    <h2>2023</h2>
+                    <p><b>Front-End Developer Internship</b> - NeST Digital</p>
+                    <p>Completed training in Angular and front-end development.</p>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="content">
+                    <h2>2024</h2>
+                    <p><b>Python Full-Stack Developer Internship</b> - Soft Solutions</p>
+                    <p>Certified as a Python full-stack developer after completing a 6-month internship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+       function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("show");
+    }
+</script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sonu Susan Varghese | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

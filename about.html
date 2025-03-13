@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <!-- Import Google Fonts (Poppins) & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Background Gradient */
+        body {
+            background: linear-gradient(to right, #0f0c29, #0000ff, #24243e);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; /* Prevents navbar from overlapping content */
+        }
+
+        /* Navbar */
+      /* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+}
+
+/* Nav Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: cyan;
+}
+
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(0, 183, 255, 0.8);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .about-text {
+            width: 60%;
+        }
+
+        .about-text h1 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: #00b7ff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .about-image {
+            width: 35%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 90%;
+            border-radius: 10px;
+            border: 2px solid #00b7ff;
+        }
+
+        /* Info Section */
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            gap: 20px;
+        }
+
+        .info-box {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 183, 255, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        /* Tools */
+        .tools {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tool-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: rgba(0, 183, 255, 0.8);
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            box-shadow: 0 0 8px rgba(0, 183, 255, 1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tool-btn i {
+            font-size: 18px;
+        }
+
+        .tool-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: cyan;
+            font-size: 16px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <h2 class="logo">Portfolio.</h2>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/qualification.html">Qualification</a></li>
+            <li><a href="/skill.html">Skills</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <div class="about-section">
+            <div class="about-text">
+                <h1>ABOUT ME</h1>
+                <p><span class="highlight">Web Developer</span></p>
+                <p>As an enthusiastic and evolving Full Stack Developer. I am actively seeking opportunities to contribute my 
+                    skills and creativity to a collaborative development team. I am particularly interested in joining a team 
+                    where I can leverage my current project experience to craft intuitive and visually appealing user interfaces 
+                    and developing website, while continuously expanding my skill set in the field of Full Stack Development .</p>
+            </div>
+            <div class="about-image">
+                <img src="/assets/IMG-20250311-WA0010.jpg" alt="Creative Designer">
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <div class="info-box">
+                <h2>SKILLS</h2>
+                <p>+ Web development: HTML, CSS, JS</p>
+                <p>+ Frameworks/Libraries: Django, React</p>
+                <p>+ Version Control: Git</p>
+                <p>+ Programming Languages: Python</p>
+            </div>
+            <div class="info-box">
+                <h2>TOOLS</h2>
+                <div class="tools">
+                    <div class="tool-btn"><i class="fab fa-html5"></i> HTML</div>
+                    <div class="tool-btn"><i class="fab fa-css3-alt"></i> CSS</div>
+                    <div class="tool-btn"><i class="fab fa-js"></i> JavaScript</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <h2>APPROACH TO DESIGN</h2>
+                <p><strong>+ Research and Strategy:</strong> I start by understanding the Programming Languages by YouTube Tutorials.</p>
+                <p><strong>+ Collaboration:</strong> I work closely with internships to ensure seamless integration.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sonu Susan Varghese | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
