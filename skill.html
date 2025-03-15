@@ -17,8 +17,8 @@
             color: white;
         }
 
-        /* Navigation */
-        nav {
+          /* Navbar */
+          nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,7 +94,7 @@
         display: flex; /* Show menu when active */
     }
 }
-      
+   
 
 
         /* Skills Section */
@@ -201,7 +201,41 @@
             margin-top: 10px;
             font-size: 16px;
         }
-
+        @media (max-width: 768px) {
+        .skills{
+            display: grid;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 100px; /* Creates an even gap */
+            padding: 50px;
+            max-width: 100%;
+            margin: auto;
+        }
+        .skill {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            
+        }
+        .professional-skills {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            top: 70px;
+        }
+        .technical-skills {
+            width: 90%;
+          position: relative;
+          top: 70px;
+        }
+        .h{
+            position: relative;
+            right: 50px;
+        }
+        }
         /* Footer */
         footer {
             text-align: center;
@@ -349,10 +383,9 @@
                 circle.textContent = percent + "%";
             });
         });
-       
-       function toggleMenu() {
-        document.querySelector(".nav-links").classList.toggle("show");
-    }
+        function toggleMenu() {
+         document.querySelector(".nav-links").classList.toggle("show");
+     }
 
     </script>
     

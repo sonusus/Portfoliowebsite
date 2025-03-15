@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  
     <style>
         /* General Styles */
         body {
@@ -20,13 +21,13 @@
 
       
       
-  /* NAVBAR STYLING */
-nav {
+   /* Navbar */
+   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 15px 10%;
+    padding: 15px 10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -72,12 +73,13 @@ nav {
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
+    
     .hamburger {
         display: block; /* Show hamburger icon */
     }
 
     .nav-links {
-        display: none; /* Hide menu initially */
+        display: none ; /* Hide menu initially */
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -97,6 +99,7 @@ nav {
         display: flex; /* Show menu when active */
     }
 }
+   
 
 
 
@@ -173,7 +176,7 @@ nav {
             padding: 20px;
             position: relative;
             top:90px;
-            left:90px
+            left:90px;
         }
 
         .name {
@@ -205,110 +208,64 @@ nav {
             bottom: 120px;
            
         }
-        @media (max-width: 1024px) {
-            .container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: grid;
-            align-items: center;
-            justify-content: center;
-            perspective: 1000px;
-        }
+        @media (max-width: 768px) {
+            .flip-box {
+                width: 90%;
+                height: 200%;
+           
+            }
 
-        .flip-box {
-            width: 100%;
-            height: 70%;
+            .flip-box .side {
             position: absolute;
-            transform-style: preserve-3d;
-            transition: transform 1s;
-        }
-
-        .flip-box.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .flip-box .side {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
             backface-visibility: hidden;
         }
+            .front h1 {
+                font-size: 2rem;
+            }
 
-        .front {
-            background: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .content h1 {
+                font-size: 1.5rem;
+            }
+
+            .profile img {
+                width: 120px;
+            }
         }
 
-        .front h1 {
-            font-size: 60px;
-            text-transform: uppercase;
-        }
+        @media (max-width: 480px) {
+            .flip-box {
+                width: 90%;
+                height: 50%;
+            }
+.hero{
+    width: 70%;
+}
+            .front h1 {
+                font-size: 1.8rem;
+            }
 
-        .highlight {
-            color: cyan;
-        }
+            .subtitle {
+                font-size: 0.9rem;
+            }
 
-        .subtitle {
-            font-size: 20px;
-            color: gray;
-        }
+            .content h1 {
+                font-size: 1.2rem;
+            }
 
-        .year {
-            font-size: 14px;
-            color: lightgray;
-        }
-
-        .back {
-            background: black;
-            color: white;
-            transform: rotateY(180deg);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .content {
-            text-align: left;
-            padding: 20px;
-            position: relative;
-            top:90px;
-            left:90px
-        }
-
-        .name {
-            color: cyan;
-            font-weight: bold;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: cyan;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .profile img {
-            width: 250px;
-            border-radius: 50%;
-            box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.7);
-            filter: drop-shadow(5px 5px 10px  rgba(0, 255, 255, 0.7));
-        }
-
-        .profile {
-            position: relative;
-            left: 420px;
-            bottom: 120px;
-           
-        } 
+            .profile img {
+                width: 100px;
+            }
+            .profile{
+                position: relative;
+                left: 100px;
+                bottom: 200px;
+            }
         }
         /* Scroll Down Indicator */
         .scroll-down {
@@ -593,23 +550,30 @@ nav {
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
             margin-top: 40px;
         }
-        
+        @media (max-width: 1024px) {
+            .container2{
+                position: relative;
+                display: grid;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <h2 class="logo">Portfolio.</h2>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="/qualification.html">Qualification</a></li>
-            <li><a href="/skill.html">Skills</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <h2 class="logo">Portfolio.</h2>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/qualification.html">Qualification</a></li>
+                <li><a href="/skill.html">Skills</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
 
     <!-- Flip Box Section -->
@@ -716,8 +680,8 @@ nav {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
         function toggleMenu() {
-        document.querySelector(".nav-links").classList.toggle("show");
-    }
+         document.querySelector(".nav-links").classList.toggle("show");
+     }
     </script>
   <footer>
     <p>&copy; 2025 Sonu Susan Varghese | All Rights Reserved</p>
